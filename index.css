@@ -1,0 +1,58 @@
+div section{
+    color: blue;
+    padding: 20px;
+    margin: 20px;
+    border: 2px solid red;
+}
+
+/* A single box inside the flex container */
+.box{
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+    margin: 10px;
+    border: 2px solid red;
+    background-color: lightyellow;
+}
+
+/* Flex layout */
+.flex-container{
+    display: flex;             /* turns on flex box for the children */
+    flex-direction: row;       /* row | row-reverse | column | column-reverse */
+    flex-wrap: wrap;           /* nowrap | wrap | wrap-reverse */
+    justify-content: center;   /* flex-start | flex-end | center | space-between | space-around | space-evenly */
+    align-items: center;       /* flex-start | flex-end | center | stretch | baseline */
+    min-height: 400px;         /* extra height so you can see align-items working */
+    border: 2px dashed black;
+}
+
+/* ---------- Responsive (media queries) ---------- */
+
+/* Tablet: screens 900px wide or less */
+@media (max-width: 900px){
+    .flex-container{
+        justify-content: space-around;   /* spread the boxes out evenly */
+    }
+    .box{
+        width: 80px;                     /* smaller boxes */
+        height: 80px;
+    }
+}
+
+/* Phone: screens 600px wide or less */
+@media (max-width: 600px){
+    body{
+        background-color: red;           /* whole page turns red on small screens */
+    }
+    .flex-container{
+        flex-direction: column;          /* stack the boxes top to bottom */
+    }
+    .box{
+        width: 80%;                      /* boxes stretch across the screen */
+        height: 60px;
+    }
+    div section{
+        padding: 10px;                   /* less space on small screens */
+        margin: 10px;
+    }
+}
